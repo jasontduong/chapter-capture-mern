@@ -25,12 +25,11 @@ const App = () => {
     }, [dispatch]);
     return (
         <MuiThemeProvider theme={theme}>
-            <Container maxWidth="xl">
-                <AppBar className={classes.appBar} position="static" color="inherit">
+            <AppBar className={classes.appBar} position="static" color="inherit">
                     <img className={classes.image} src={logo} alt="chapter capture" height="auto" width="100" />
                     <Typography className={classes.heading} variant="h2" align="center">mangaboxd</Typography>
                 </AppBar>
-            
+            <Container className={classes.mainContain} maxWidth="lg">
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
