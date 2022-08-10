@@ -6,7 +6,7 @@ import postRoutes from './routes/posts.js';
 import request from 'request';
 
 
-const API_URL = 'https://api.myanimelist.net/v2/manga/ranking?ranking_type=bypopularity&limit=10';
+const API_URL = 'https://api.myanimelist.net/v2/manga'
 const API_KEY = '6774860f578defdb5ef5899f865a0138';
 const HEADER = 'X-MAL-CLIENT-ID';
 const app = express();

@@ -17,6 +17,20 @@ const postSchema = mongoose.Schema({
 
 });
 
+const mangaSchema = mongoose.Schema({
+    data: [
+        {
+          node: {
+            id: Number,
+            title: String,
+            main_picture: {
+              medium: String,
+              large: String
+            }
+          }
+        },
+    ]
+})
 const PostMessage = mongoose.model('PostMessage', postSchema);
-
-export default PostMessage;
+const MangaMessage = mongoose.model('MangaMessage', mangaSchema);
+export default PostMessage; 
