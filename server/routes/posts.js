@@ -1,5 +1,5 @@
 import express from 'express';
-import { getPosts, createPost } from '../controllers/posts.js';
+import { getPosts, createPost, updatePost, deletePost, likePost, getManga } from '../controllers/posts.js';
 
 
 const router = express.Router();
@@ -7,6 +7,10 @@ const router = express.Router();
 // localhost:5006/posts
 router.get('/', getPosts);
 router.post('/', createPost);
+router.patch('/:id', updatePost)
+router.delete('/:id', deletePost);
+router.patch('/:id/likePost', likePost);
+router.get('/', getManga);
 
 
 export default router;

@@ -23,10 +23,6 @@ export default makeStyles((theme) => ({
         marginLeft: '15px',
     },
 
-    mainContain: {
-        paddingTop: '25px',
-
-    },
     [theme.breakpoints.down('sm')]: {
         appBar: {
             justifyContent: 'center',

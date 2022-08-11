@@ -29,8 +29,17 @@ const mangaSchema = mongoose.Schema({
             }
           }
         },
-    ]
+    ],
+    message: String,
+    creator: String,
+    likeCount: {
+        type: Number,
+        default: 0
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
+    },
 })
-const PostMessage = mongoose.model('PostMessage', postSchema);
-const MangaMessage = mongoose.model('MangaMessage', mangaSchema);
-export default PostMessage; 
+export const PostMessage = mongoose.model('PostMessage', postSchema);
+export const MangaMessage = mongoose.model('MangaMessage', mangaSchema);
