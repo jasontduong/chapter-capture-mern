@@ -43,6 +43,8 @@ export default makeStyles({
   },
   title: {
     padding: '0 16px',
+    paddingBottom: '5px',
+    borderBottom: '1px solid black',
   },
   cardActions: {
     padding: '0 16px 8px 16px',

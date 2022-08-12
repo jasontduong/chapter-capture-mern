@@ -8,7 +8,6 @@ import moment from 'moment';
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../../actions/posts";
 import { likePost } from "../../../actions/posts";
-import { getManga } from "../../../actions/posts";
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
@@ -30,9 +29,7 @@ const Post = ({ post, setCurrentId }) => {
                     <MoreHorizIcon fontSize="medium" />
                 </Button>
             </div>
-            <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
-            </div>
+          
             <Typography className={classes.title} variant="h4" gutterBottom>{post.title}</Typography>
             <CardContent>
                  <Typography variant="h6" gutterBottom>{post.message}</Typography>
@@ -40,7 +37,7 @@ const Post = ({ post, setCurrentId }) => {
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>            
                     <FavoriteIcon fontSize="small" />
-                    Like{' '}
+                    &nbsp;Like&nbsp;
                     {post.likeCount}
                 </Button>
 

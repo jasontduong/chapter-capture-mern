@@ -32,13 +32,7 @@ const Auth = () => {
         handleShowPassword(false);
 
     };
-    const googleSuccess = async (res) => {
-        console.log(res);
-    };
-    const googleFailure = (error) => {
-        console.log(error);
-        console.log("Google Sign In failed! Try again later.")
-    };
+
 
     return (
         <GoogleOAuthProvider client_id="145427410552-m2jo2tjp9806irhjvluhkmsjbiofsa9k.apps.googleusercontent.com"> 
