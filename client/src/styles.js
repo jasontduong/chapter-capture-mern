@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
     },
 
     mainContain: {
-        paddingTop: '25px',
+        marginTop: theme.spacing(6),
 
     },
     [theme.breakpoints.down('sm')]: {
@@ -37,7 +37,6 @@ export default makeStyles((theme) => ({
         },
         heading: {
             fontSize: '3rem',
-        }
-
+        },
     }
 }));

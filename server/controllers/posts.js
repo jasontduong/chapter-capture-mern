@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { PostMessage, MangaMessage } from "../models/postMessage.js";
+import { PostMessage } from "../models/postMessage.js";
 
 export const getPosts = async (req, res) => {
     try {
@@ -56,17 +56,17 @@ export const likePost = async (req, res) => {
     res.json(updatedPost);
 }
 
-export const getManga = async (req, res) => {
+// export const getManga = async (req, res) => {
 
-    try {
-        const mangaMessages = await MangaMessage.find();
+//     try {
+//         const mangaMessages = await MangaMessage.find();
 
-        console.log(mangaMessages);
+//         console.log(mangaMessages);
 
-        res.status(200).json(mangaMessages);
-    } catch (error) {
-        res.status(404).json( {message: error.message });
-    }
+//         res.status(200).json(mangaMessages);
+//     } catch (error) {
+//         res.status(404).json( {message: error.message });
+//     }
 
-}
+// }
 

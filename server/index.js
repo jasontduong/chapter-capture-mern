@@ -7,7 +7,7 @@ import request from 'request';
 import dotenv from 'dotenv';
 
 
-const API_URL = 'https://api.myanimelist.net/v2/manga';
+const API_URL = 'https://api.myanimelist.net/v2/manga?';
 const app = express();
 dotenv.config();
 
@@ -26,7 +26,7 @@ mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnified
 .catch((error) => console.log(error.message));
 
 app.get('/manga', function (req, res) {
-    let url = API_URL + '?' + query
+    let url = API_URL + query
     req.headers[process.env.HEADER] = process.env.API_KEY
     req.pipe(request(url)).pipe(res)
   })

@@ -8,11 +8,11 @@ import moment from 'moment';
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../../actions/posts";
 import { likePost } from "../../../actions/posts";
+import { getManga } from "../../../actions/posts";
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-   console.log(post.title);
     return (
 
         <Card className={classes.card}>
@@ -44,7 +44,7 @@ const Post = ({ post, setCurrentId }) => {
                     {post.likeCount}
                 </Button>
 
-                <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
+                <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small" />
                     Delete
                 </Button>

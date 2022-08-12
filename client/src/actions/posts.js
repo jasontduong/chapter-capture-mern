@@ -5,19 +5,32 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from "../constants/actionType
 // Action Creators
 export const getPosts = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchPosts();
-
-        dispatch({ type: FETCH_ALL, payload: data });
+        const {data}  = await api.fetchPosts();
+       // console.log({data});
+   
+        dispatch({ type: FETCH_ALL, payload: data});
     } catch (error) {
         console.log(error);
     }
-
+    
 }
+
+export const getManga = () => async (dispatch) => {
+    try {
+        const { data } = await api.getManga();
+        console.log({ data });
+        dispatch({ type: FETCH_ALL, payload: data });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 export const createPost = (post) => async (dispatch) => {
     try {
         const { data } = await api.createPost(post);
-
+        
         dispatch({ type: CREATE, payload: data });
     } catch (error) {
         console.log(error);
@@ -55,13 +68,4 @@ export const likePost = (id) => async (dispatch) => {
     }
 }
 
-export const getManga = (searchQuery) => async (dispatch) => {
-    try {
-        const { data } = await api.getManga(searchQuery);
-
-        console.log({ data });
-    } catch (error) {
-        console.log(error);
-    }
-}
 
