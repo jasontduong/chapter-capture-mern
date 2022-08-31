@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material'
 import { getManga } from './actions/posts';
-import useStyles from './styles';
-import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider, } from '@mui/material/styles';
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Auth from "./components/Auth/Auth";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Auth from './components/Auth/Auth';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 const App = () => {
     const [resourceType, setResourceType] = useState('q=chain');
-    const classes = useStyles();
+
     const client_id = "145427410552-m2jo2tjp9806irhjvluhkmsjbiofsa9k.apps.googleusercontent.com";
 
     const theme = createTheme({
@@ -41,18 +40,18 @@ const App = () => {
 
     return (
 
-        <GoogleOAuthProvider client_id="145427410552-m2jo2tjp9806irhjvluhkmsjbiofsa9k.apps.googleusercontent.com"> 
-            <MuiThemeProvider theme={theme}>
+        <GoogleOAuthProvider clientId={client_id}> 
+          <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <Navbar />
-                    <Container className={classes.mainContain} maxWidth="lg">
-                        <Switch>
-                            <Route path="/" exact component={Home} />
-                            <Route path="/auth" exact component={Auth} />
-                        </Switch>
+                    <Container maxWidth="lg">
+                        <Routes>
+                            <Route path="/" exact element={<Home/>} />
+                            <Route path="/auth" exact element={<Auth/>} />
+                        </Routes>
                     </Container>
                 </BrowserRouter>
-            </MuiThemeProvider>
+            </ThemeProvider>
         </GoogleOAuthProvider>
     );
 };
